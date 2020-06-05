@@ -5,13 +5,13 @@ div{
 }
 @media (min-width: 640px) {
     div{
-        margin: calc(70px + ((1vw - 6.4px)*22.40)) 0;
-        font-size: calc(70px + ((1vw - 6.4px)*22.40));
+        margin: calc(70px + ((1vw - 6.4px)*19)) 0;
+        font-size: calc(70px + ((1vw - 6.4px)*19));
     }
   }
 @media (min-width: 2560px) {
     div{
-        margin: 500px 0;
-        font-size: 500px;
+        margin: 434px 0;
+        font-size: 434px;
     }
 }

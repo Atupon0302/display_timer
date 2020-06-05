@@ -8,36 +8,19 @@
     <!-- semantic.css  -->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.3/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="index.css">
-    <!--
-    <style type="text/css">
-        body {
-            background-color: #fff;
-            color: #000;
-            overflow: hidden;
-            font-family: monospace;
-            font-size: 10em;
-        }
-
-        p {
-            position: absolute;
-            width: 100%;
-            top: 50%;
-            margin-top: -0.5em;
-            text-align: center;
-        }
-    </style>
-    -->
 </head>
 
 <body>
     <div class="ui three item menu">
-        <a class="item active">Clock</a>
-        <a class="item">Stopwatch</a>
-        <a class="item">Stopwatch with Color Bar</a>
+        <a href="javascript:void(0)" onclick="clock()" class="item active">Clock</a>
+        <a href="javascript:void(0)" onclick="stopwatch();" class="item">Stopwatch</a>
+        <a href="javascript:void(0)" onclick="" class="item">Stopwatch with Color Bar</a>
       </div>
-    <div>
-        <div class="ui container fluid" id="timer_display_day"></div>
-        <div class="ui container fluid" id="timer_display_time"></div>
+    <div class="ui container fluid" id="timer_display">
+        <!--
+        <div id="timer_display_day"></div>
+        <div id="timer_display_time"></div>
+        -->
     </div>
 
 </body>
