@@ -42,7 +42,7 @@ var stopwatch = function(){
     timer_clock_display.innerText = "00:00:000";
     timer_clock_display.setAttribute("id", "timer_clock_display");
     timer_display.appendChild(timer_clock_display);
-    
+
     const start_button = document.createElement("button");
     start_button.innerText = "Start";
     start_button.setAttribute("id", "start");
@@ -59,7 +59,9 @@ var stopwatch = function(){
     reload_button.setAttribute("class", "ui button");
     timer_display.appendChild(reload_button);
 
-
+    start_button.disabled = false;
+    stop_button.disabled = true;
+    reload_button.disabled = true;
 
     let start_time;
     let elapsed_time = 0;
@@ -84,15 +86,25 @@ var stopwatch = function(){
     start_button.addEventListener('click', function(){
         start_time = Date.now();
         countUp();
+        start_button.disabled = true;
+        stop_button.disabled = false;
+        reload_button.disabled = true;
     });
     stop_button.addEventListener('click', function(){
         clearTimeout(timer_id);
         time_to_add += Date.now() - start_time;
+        start_button.disabled = false;
+        stop_button.disabled = true;
+        reload_button.disabled = false;
+
     });
     reload_button.addEventListener('click', function(){
         elapsed_time = 0;
         time_to_add = 0;
         updateTimeText();
+        start_button.disabled = false;
+        stop_button.disabled = true;
+        reload_button.disabled = true;
     });
 
 }
