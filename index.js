@@ -1,12 +1,12 @@
 window.onload = function() {
     this.clock();
 }
+const timer_display = document.getElementById('timer_display');
+
 var clock = function () {
-    const timer_display = document.getElementById('timer_display');
-    if(document.getElementById("timer_display_day") != null){
+    if (timer_display != null){
         timer_display.textContent = null;
     }
-    
     const timer_display_day = document.createElement("div");
     timer_display_day.setAttribute("id", "timer_display_day");
     timer_display.appendChild(timer_display_day);
@@ -34,30 +34,34 @@ var clock = function () {
 
 var stopwatch = function(){
     console.log("stopwatch()");
-    const timer_display = document.getElementById('timer_display');
-    if(document.getElementById("timer_display_day") != null){
+    if (timer_display != null){
         timer_display.textContent = null;
     }
+
     const timer_clock_display = document.createElement("div");
     timer_clock_display.innerText = "00:00:000";
     timer_clock_display.setAttribute("id", "timer_clock_display");
     timer_display.appendChild(timer_clock_display);
 
+    const timer_clock_buttons = document.createElement("div");
+    timer_clock_buttons.setAttribute("id", "timer_clock_buttons");
+    timer_display.appendChild(timer_clock_buttons);
+
     const start_button = document.createElement("button");
     start_button.innerText = "Start";
     start_button.setAttribute("id", "start");
     start_button.setAttribute("class", "ui button");
-    timer_display.appendChild(start_button);
+    timer_clock_buttons.appendChild(start_button);
     const stop_button = document.createElement("button");
     stop_button.innerText = "Stop";
     stop_button.setAttribute("id", "stop");
     stop_button.setAttribute("class", "ui button");
-    timer_display.appendChild(stop_button);
+    timer_clock_buttons.appendChild(stop_button);
     const reload_button = document.createElement("button");
     reload_button.innerText = "Reload";
     reload_button.setAttribute("id", "reload");
     reload_button.setAttribute("class", "ui button");
-    timer_display.appendChild(reload_button);
+    timer_clock_buttons.appendChild(reload_button);
 
     start_button.disabled = false;
     stop_button.disabled = true;
